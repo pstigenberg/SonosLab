@@ -21,8 +21,8 @@ from os.path import isfile, join
 # Configuration
 # -----------------------------------------------------------------------------------
 sonos_ip = '192.168.0.51'
-sonos_volume = 5
-sonos_song_timeout = 0 # 0 = no timeout
+sonos_volume = 8
+sonos_song_timeout = 20 # 0 = no timeout
 track_uri = 'x-sonos-spotify:spotify%3Atrack%3A[ID]?sid=9'
 dropbox_path = '~/Dropbox/Tekla'
 file_prefix = 'play'
@@ -86,7 +86,7 @@ if __name__ == '__main__':
 				sonos.pause()
 				sonos.play()
 				if sonos_song_timeout > 0:
-					print 'Timeout set to ' + sonos_song_timeout + ' seconds. Waiting...'
+					print 'Timeout set to ' + str(sonos_song_timeout) + ' seconds. Waiting...'
 					time.sleep(sonos_song_timeout)
 					sonos.stop()
 					
